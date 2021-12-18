@@ -26,7 +26,7 @@ int main() {
     displayRLEList(l);
     cout << endl;
 
-    //cout << "The sum of its elements is: " << sum(l) << endl;
+    cout << "The sum of its elements is: " << sum(l) << endl;
     
     return 0;
 }

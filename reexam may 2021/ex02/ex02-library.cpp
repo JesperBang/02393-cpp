@@ -62,8 +62,14 @@ Elem* concatenate2(Elem *list1, Elem *list2) {
 
 // Task 2(c).  Implement this function
 int sum(Elem *list) {
-    // Write your code here
-    return 0;
+    Elem* current = list; // Initialize current
+    int total;
+    while (current->next != nullptr)
+    {
+        total += (current->value * current->times);
+        current = current->next;
+    }
+    return total;
 }
 
 // Do not modify
