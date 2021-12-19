@@ -22,8 +22,18 @@ Elem* reverse(Elem *list) {
 
 // Task 2(b).  Implement this function
 Elem* concatenate(Elem *list1, Elem *list2) {
+    if (list1 == nullptr)
+        return list2;
+    if (list2 == nullptr)
+        return list1;
+
     if (list1->next == NULL)
-        list1->next = list2;
+        if (list1->value == list2->value){
+            list1->times += list2->times;
+            list1->next = list2->next;            
+        }
+        else 
+            list1->next = list2;
     else
         
         concatenate(list1->next,list2);
@@ -31,40 +41,13 @@ Elem* concatenate(Elem *list1, Elem *list2) {
     return list1;
 }
 
-// Task 2(b).  Implement this function
-Elem* concatenate2(Elem *list1, Elem *list2) {
-    displayRLEList(list1);
-    cout << "\n";
-    displayRLEList(list2);
-    cout << "\n";
-
-    Elem* current = list1; // Initialize current
-
-    while (current->next != nullptr)
-    {
-
-        while (list2->next != nullptr)
-        {
-            if (current->value == list2->value){
-                current->times += list2->times;
-                current->next = list2->next;
-            } else {
-                current->next = list2;
-            }
-            
-        }
-        
-    }
-    //list1 = current;
-
-    return list1;
-}
 
 // Task 2(c).  Implement this function
 int sum(Elem *list) {
     Elem* current = list; // Initialize current
-    int total;
-    while (current->next != nullptr)
+
+    int total = 0;
+    while (current != nullptr)
     {
         total += (current->value * current->times);
         current = current->next;
