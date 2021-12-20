@@ -3,22 +3,38 @@
 
 //Exercise 2 (a) Implement this function
 string reverse(string s, int n){
-    if(s.size()-n != 0)
-    {
-        swap(s[s.size()-n],s[n]);
-		reverse(s,n-1);
-    } 
-	return s;
+	// Much simpler method:
+	// string result;
+	// for (char c: s){
+	// 	result.insert(result.begin(), c);
+	// }
+
+	if(n<0){
+		return "";
+	}
+	else{
+		return s[n]+reverse(s, n-1);
+	}
 }
 
 //Exercise 2 (b) Implement this function
 bool isPalindrome(string s, int n1, int n2){
-	return true;
-	//put your code here
+	string rev = reverse(s, n2);
+	if (rev == s)
+		return true;
+	else
+		return false;
 }
 
 //Exercise 2 (c) Implement this function
 int distancePalindrome(string s, int n1, int n2){
-	//put your code here
-	return 0;
+	if(n1>=s.length()/2){
+		return 0;
+	}
+	if(s[n1]==s[n2]){
+		return 0+distancePalindrome(s,n1+1,n2-1);
+	}
+	else{
+		return 1+distancePalindrome(s,n1+1,n2-1);
+	}
 }

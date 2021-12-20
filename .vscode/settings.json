@@ -6,6 +6,15 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "string_view": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "optional": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp"
     }
 }

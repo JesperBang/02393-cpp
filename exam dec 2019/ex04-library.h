@@ -19,9 +19,28 @@ public:
 };
 
 //Exercise 4 (a) declare WhitePiece
-//put your code here
+class WhitePiece : public Piece{
+	public:
+		WhitePiece();
+		virtual string getColor();
+		virtual string printCode();
+		virtual void moveRight(void);
+		virtual void moveLeft(void);
+	protected:
+		int wr;
+		int wc;
+};
 
 //Exercise 4 (b) declare BlackPiece
-//put your code here
+class BlackPiece : public Piece{
+	public:
+		virtual string getColor();
+		virtual string printCode();
+		virtual void moveRight(void);
+		virtual void moveLeft(void);
+	protected:
+		int wr;
+		int wc;
+};
 
 #endif
