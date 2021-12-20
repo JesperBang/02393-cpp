@@ -21,26 +21,21 @@ public:
 //Exercise 4 (a) declare WhitePiece
 class WhitePiece : public Piece{
 	public:
-		WhitePiece();
+		WhitePiece(int r, int c);
 		virtual string getColor();
 		virtual string printCode();
 		virtual void moveRight(void);
 		virtual void moveLeft(void);
-	protected:
-		int wr;
-		int wc;
 };
 
 //Exercise 4 (b) declare BlackPiece
 class BlackPiece : public Piece{
 	public:
+		BlackPiece(int r, int c);
 		virtual string getColor();
 		virtual string printCode();
 		virtual void moveRight(void);
 		virtual void moveLeft(void);
-	protected:
-		int wr;
-		int wc;
 };
 
 #endif

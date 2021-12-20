@@ -22,7 +22,7 @@ class LimitedBuffer : public Buffer {
     protected:
         vector<int> buffer;
         unsigned int cap;
-        int occ;
+        unsigned int occ;
         int def;
 };
 
